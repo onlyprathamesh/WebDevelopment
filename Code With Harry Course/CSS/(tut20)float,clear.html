@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float & clear</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- links of ubuntu font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    
+    <!-- link to Bebas Neue font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <style>
+        h1{
+            font-family: 'Bebas Neue', cursive;
+        }
+        p{
+            font-family: 'Ubuntu', sans-serif;
+        }
+        .container{
+            border: 5px solid rgb(221, 112, 130);
+            width: 60%;
+            margin: auto ;
+            padding: 10px;
+            
+        }
+        .item{
+            border: 3px solid black;
+            margin: 15px ;
+            padding: 15px;
+        }
+        #fruit{
+            /* It makes the element/object/box anything float. */
+            float: left;
+            width: 41%;
+            text-align: left;
+        }
+        #computer{
+
+            float: right;
+            width: 41%;
+            text-align: right;
+        }
+        #stationary{
+            float:none;
+            width: 92%;
+            /* It avoids the overlaping of the boxes, borders etc. */
+            clear: both;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2> Wlecome to my store!</h2>
+        <div id="fruit" class="item">
+            <h1>Fruits</h1>
+            <p class="fruitpara" id="fpara">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, maiores debitis dignissimos labore, alias rerum eaque animi repellat quo a ullam ipsam ducimus fugiat velit. Similique veniam excepturi eveniet dolore?
+            </p>
+        </div>
+        <div id="computer" class="item">
+            <h1>Computers</h1>
+            <p class="computerpara" id="cpara">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, maiores debitis dignissimos labore, alias rerum eaque animi repellat quo a ullam ipsam ducimus fugiat velit. Similique veniam excepturi eveniet dolore?
+            </p>
+        </div>
+        <div id="stationary" class="item">
+            <h1>Stationary</h1>
+            <p class="stationarypara" id="spara">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, maiores debitis dignissimos labore, alias rerum eaque animi repellat quo a ullam ipsam ducimus fugiat velit. Similique veniam excepturi eveniet dolore?
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>

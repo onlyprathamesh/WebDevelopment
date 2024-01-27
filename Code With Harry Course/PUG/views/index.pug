@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <title>This is the title using plain html</title> -->
+    <!-- Used for passing by PUG <title>#{title}</title> -->
+    <title>Google form</title>
+    style 
+        include ../static/gymweb_style.css 
+  </head>
+  <body>
+    <!-- Used for variable passed by PUG
+    <h1>This is the heading</h1>
+    | #{content}
+    | <p>Hello there, myself Prathamesh(normal para)</p> -->
+
+    <nav class="navbar">
+        <ul>
+            <li class="items" ><a href='/'>Home</a></li>
+            <li class="items" ><a href='/'>About Us</a></li>
+            <li class="items" ><a href='/'>Contact Us</a></li>
+            <li class="items" ><a href='/'>More Info</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <p>Fill out the Google form to book an event</p>
+        <form action="/" method="post" id="contact">
+            <input type="text" name="name" id="name" placeholder="Enter your name">
+            <input type="text" name="clas" id="clas" placeholder="Enter your Class">
+            <input type="text" name="event" id="event" placeholder="Enter The name of Event">
+            <input type="email" name="email" id="email" placeholder="Enter your email">
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+  </body>
+</html>

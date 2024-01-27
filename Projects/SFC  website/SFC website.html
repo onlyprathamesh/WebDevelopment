@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFC | Sangvi Football Club</title>
+    <!-- overall font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
+    <!-- logo font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <!-- logo downpart -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo&display=swap" rel="stylesheet">
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            background: url(fcourt.jpg);
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size:cover;
+            font-family: 'Signika', sans-serif;
+
+        }
+
+        .header {
+            margin: 10px auto;
+            padding: 0px;
+            color: white;
+
+
+        }
+
+        .left {
+            display: inline-block;
+            /* border: 2px solid red; */
+            position: absolute;
+            left: 34px;
+            top: 22px;
+        }
+
+        .center {
+            display: block;
+            /* border: 2px solid rgb(255, 208, 0); */
+            width: 37%;
+            margin: 22px auto;
+        }
+
+        .right {
+            /* border: 2px solid rgb(51, 255, 0); */
+            display: inline-block;
+            position: absolute;
+            right: 34px;
+            top: 22px;
+
+
+        }
+
+        .navbar {
+            display: inline-block;
+
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+
+        }
+
+        .navbar li a:hover,
+        .navbar li a.active {
+            color: #27ff00;
+            text-decoration: underline;
+
+        }
+
+        .navbar li {
+
+            display: inline-block;
+            padding: 0px 20px;
+            font-size: 20px;
+
+        }
+
+        #logo {
+            text-align: center;
+            font-size: 25px;
+            margin: 0px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        #name {
+            margin: 0px;
+            font-size: 15px;
+            font-family: 'Chivo', sans-serif;
+        }
+
+        .btn {
+            margin: 0px 10px;
+            padding: 3px 3px;
+            color: white;
+            background-color: black;
+            border-radius: 12px;
+            border: 2px solid white;
+            font-size: 15px;
+            cursor: pointer;
+            font-family: 'Signika', sans-serif;
+        }
+
+        .right :hover {
+            background-color: rgb(66, 65, 65);
+        }
+
+        .container {
+            border: 6px solid white;
+    padding: 39px;
+    margin: 82px 185px;
+    width: 30%;
+    border-radius: 48px;
+        }
+
+        .form-group input {
+            font-family: 'Signika', sans-serif;
+            border: 2px solid;
+            border-radius: 7px;
+            margin: 4px auto;
+            padding: 0px 11px;
+            font-size: 18px;
+            display: block;
+            width: 293px;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 29px;
+            text-align: center;
+        }
+
+        .container button {
+            display: block;
+            width: 30%;
+            margin: 25px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <p id="logo">S.F.C</p>
+            <p id="name">Sangvi Football Club</p>
+        </div>
+        <div class="center">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <button class="btn">Call Us</button>
+            <button class="btn">Email Us</button>
+        </div>
+        <div class="container">
+            <h1>Become the member of club now</h1>
+            <form action="noaction.php">
+                <div class="form-group">
+                    <input type="text" placeholder="Enter your Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Enter your Age">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Enter your Gender">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Enter your Address">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Enter your Email Address">
+                </div>
+            </form>
+            <button class="btn">Submit</button>
+        </div>
+    </header>
+
+</body>
+
+</html>

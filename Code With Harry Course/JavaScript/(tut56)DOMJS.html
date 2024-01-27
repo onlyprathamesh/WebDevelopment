@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating DOM</title>
+</head>
+<body>
+    <div class="container" id="main">
+        <ul id="nav">
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Report</li>
+        </ul>
+    </div>
+    <div class="container">
+        DUSRA container
+    </div>
+</body>
+<script>
+    // Basically in this code we learnt that we can chang econtents of html nad css by using element id, class name , by selectors
+    let main = document.getElementById("main");
+    console.log(main);
+
+    let nav = document.getElementById("nav");
+    console.log(nav);
+    // nav.innerHTML = "<li>Homee</li>"
+
+    let con = document.getElementsByClassName("container");
+    console.log(con);
+
+</script>
+</html>

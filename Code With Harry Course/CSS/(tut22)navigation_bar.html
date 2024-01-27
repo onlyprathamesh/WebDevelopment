@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation bar</title>
+    <style>
+        .container{
+            background-color: aqua;border-radius: 25px;
+        }
+        .list ul{
+            overflow: auto;
+        }
+        .list li{
+            float: left;
+            list-style: none;
+            margin: 5px 10px;
+        }
+        .list li{
+            padding: 7px 45px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+        .list li:hover{
+            text-decoration-line: underline;
+            text-decoration-style:double;
+            background-color: chartreuse;
+            border: 1px solid salmon;
+        }
+        .search{
+            float: right;
+            padding: 15px 40px;
+            border-radius: 15px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="na" class="list">
+            <ul>
+                <li>Home</li>
+                <li>College</li>
+                <li>Work</li>
+                <li>Sports</li>
+                <li>Help</li>
+                <div class="search">
+                    <input type="text" id="se" placeholder="Search bar">
+                </div>
+            </ul>
+        </a>
+    </div>
+    
+</body>
+</html>

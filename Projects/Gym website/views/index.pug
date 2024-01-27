@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    style
+      include ../static/style.css
+  body
+    nav#navbar 
+        ul 
+            li #[a(href='/') Home ] 
+            li #[a(href='/') Services] 
+            li #[a(href='/') About Us] 
+            li #[a(href='/') Contact Us ]  
+    section#main_page
+        div.maintext 
+          h1 JOIN THE PARTY
+        div.btn
+          button Get Started
+    section#sponsors_page 
+      div.cards 
+        |Card no 1 
+      div.cards 
+        |Card no 2 
+      div.cards 
+        |Card no 3 
+      div.cards 
+        |Card no 4 
+      div.cards 
+        |Card no 5 
+      div.cards 
+        |Card no 6
+    footer#footer
+        | This is my footer
+    script
+      include ../static/index.js

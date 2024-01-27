@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="bs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Department Page</title>
+    <style>
+        /* Calender CSS */
+        .wrapper{
+  width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+.wrapper header{
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+header .icons{
+  display: flex;
+}
+header .icons span{
+  height: 0px;
+  width: 0px;
+  margin: 0 95px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child{
+  margin-right: 30px;
+}
+header .icons span:hover{
+  background: #f2f2f2;
+}
+header .current-date{
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendar{
+  padding: 02px;
+}
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendar .days{
+  margin-bottom: 20px;
+}
+.calendar li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li{
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.inactive{
+  color: #aaa;
+}
+.days li.active{
+  color: #fff;
+}
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before{
+  background: #9B59B6;
+}
+.days li:not(.active):hover::before{
+  background: #f2f2f2;
+  box-sizing: border-box;
+}
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 16px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 600px;
+  padding: 400px;
+  background-color: white;
+}
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=Location] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 10px 0;
+  border: none;
+  background: #f1f1f1;
+}
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=Location]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+/*for timing*/
+.form-container {
+  max-width: 300px;
+  padding: 30px;
+  background-color: white;
+}
+.form-container input[type=number], .form-container input[type=Timing] {
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0 29px 0;
+  border: none;
+  background: #f1f1f1;
+}
+/* When the inputs get focus, do something */
+.form-container input[type=number]:focus, .form-container input[type=Timing]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:05px;
+  opacity: 0.8;
+}
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+        /* College page css starts here */
+        .cont1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding:2px;
+}
+.header{
+    height:182px;
+    display: flex;
+    flex-direction: row;    
+}
+.logo1{
+    padding-left: 25px;
+    padding-top: 15px;
+    padding-right:20px;
+}
+.mmcoelogo{
+    width:70px; 
+    height:80px;
+    margin:0px;
+}
+.clgname{
+    height:200px;
+    width:350px;
+    padding:10px;
+    padding-left: 5px;
+    padding-top: 15px;
+
+}
+.clgname1{
+    font-family: 'Roboto', sans-serif;
+    color:#174e86;
+    font-size: 18px ; 
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 6px;
+    font-family: 'Roboto', sans-serif;
+}
+.clgname2{
+    font-family: 'Roboto', sans-serif;
+    color: red;
+    font-size: 22px;
+    font-weight: 700;
+}
+.clgname3{
+    font-size:12px;
+    margin-bottom: 2px;
+    font-family: 'Roboto', sans-serif;
+}
+.clgname4{
+    font-family: 'Roboto', sans-serif;
+    color: red;
+    font-size:13px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+.head{
+    display:flex;
+    flex-direction:row;
+}
+.bttn{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    padding-right:40px;
+    padding-left:0px;
+    margin-left:0px;
+}
+.logos{
+    display:flex;
+    flex-direction:row;
+}
+
+.head1{
+    display:flex;
+    flex-direction: column;
+    padding:15px;
+    padding-top: 17px;
+    padding-left:0px;
+    width:400px;
+    
+}
+.head_para{
+    font-size:13px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+.head2{
+    display:flex;
+    flex-direction:column;
+    width:400px;
+    padding:15px;
+    padding-top:17px;
+    padding-right: 0px;
+    
+
+}
+.nbalogo{
+    height: 45px;
+    width: 60px;
+    margin-right: 0px;
+}
+.naaclogo{
+    height: 35px;
+    width: 35px;
+    margin-right:3px;
+    margin-left:6px;
+}
+.calllogo{
+    height: 20px;
+    width: 20px;
+    margin-top:15px;
+}
+.numb{
+    display:flex;
+    flex-direction: row;
+}
+.number{
+    font-size: 14px;
+    color:#26689e;
+    font-weight: bold;
+    margin-top:18px;
+
+}
+.headbtn{
+    background-color:#55acee;
+    color: black;
+    border-radius: 30px;
+    height:38px;
+    padding-left: 26px;
+    padding-right: 26px;
+    border-style: none;
+    margin:5px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+.headbtn1{
+    background-color:#55acee;
+    color: black;
+    border-radius: 30px;
+    height:38px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-style: none;
+    margin:5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+.homelogo{
+    height: 15px;
+    width: 15px;
+}
+.nbar{
+    display:flex;
+    background-color:#081441 ;
+    flex-direction: row;
+    width:100vw;
+    justify-content:flex-start;
+    padding: 5px;
+    padding-right: 30px;
+    height:40px;
+    padding-left: 60px;
+
+}
+.navbar{
+    color:white;
+    font-weight: 600;
+    font-size: 9px;
+    padding:3px;
+    margin-right: 5px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    
+}
+.photo{
+    height:190px;
+    width:100vw;
+}
+.triangle_icon{
+    height: 25px;
+    width: 13px;
+    margin-right: 15px;
+    
+
+}
+.clubs_main_head{
+    font-size: 24px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+.in_navbar{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin-right: 225px;
+    margin-top: 8px;
+    font-size: 20px;
+
+
+}
+.whitetext{
+    padding-top:5px;
+    color:white;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 3px;
+}
+.navbar2{
+    display:flex;
+    flex-direction: row;
+    padding:3px;
+    height:50px;
+    justify-content: space-between;
+    background-color: black;
+    padding-left:175px;
+}
+
+.clubs_head{
+    display:flex;
+    flex-direction: row;
+    justify-content:left;
+    padding:3px;
+}
+.departments{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top:60px;
+}
+.box{
+    padding:20px;        
+    border: 1px groove #7d7d7d;
+    background-color: #f7f7f7;
+    width:700px;
+}
+.dep_row{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+.block{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+.dep_logo{
+    height:150px;
+    width:200px;
+
+}
+.dep_name{
+    font-family: 'Roboto', sans-serif;
+    font-size:16px;
+    color: white;
+    font-weight: bold;
+    text-align:center;
+    width:200px;
+    padding:8px;
+    background-color: rgb(23, 155, 155);
+
+}
+.dep_name:hover{
+    background-color: #3686f6;
+    transition:0.2s;
+}
+.cont2{
+    background-color: #f7f6f6;
+    width:100vw;
+    padding-left: 175px;
+    padding-right: 175px;
+    padding-top: 25px;
+}
+.cont2_subsection{
+    display: flex;
+    flex-direction: row;
+}
+
+.block1{
+    height: 200px;
+    width:400px;
+    margin-right: 15px;
+}
+.foot_clg_name{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+.content_block1{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #333333;
+}
+.email_block1{
+    text-decoration: none;
+    color:hsl(210, 76%, 20%);
+    font-family: 'Roboto', sans-serif;
+}
+
+.block2{
+    height: 200px;
+    width:200px;
+    margin-right: 15px;
+
+}
+
+.content_block2{
+    font-size: 11px;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+}
+.cont2_para{
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    color: #5f5f5f;
+
+}
+.copyright_block{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: rgb(65, 64, 64);
+    
+
+}
+
+.copyright_block_content{
+    font-size: 10px;
+    margin-bottom: 2px;
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+
+}
+.title{
+    color:black;
+    font-family: 'Roboto', sans-serif;
+}
+    </style>
+</head>
+
+<body>
+    <div class="cont1">
+        <div class="header">
+            <div class="logo1">
+                <img class="mmcoelogo" src="/mmcoe logo1.jpeg">
+            </div>
+            <div class="clgname">
+                <h1 class="clgname1">Marathwada Mitra Mandal's</h1>
+                <h1 class="clgname2">Marathwada Mitra Mandal's College of Engineering</h1>
+                <p class="clgname3">(Approved by AICTE New Delhi,Recognised by DTE Maharastra and affiliated to
+                    Savitribai Phule
+                    Pune University)</p>
+                <p class="clgname4">Accredited with 'A++'Grade by NAAC</p>
+            </div>
+            <div class="head">
+                <div class="head1">
+                    <p class="head_para">Electrical Engineering & Mechanical Engineering Departments Accrediated by
+                        National Board
+                        of Accrediation
+                        (NBA)
+                    </p>
+                    <div class="bttn">
+                        <button class="btn headbtn">Admission Enquiry</button>
+                        <button class="btn headbtn">FMCIII</button>
+                    </div>
+
+                </div>
+                <div class="head2">
+                    <div class="logos">
+                        <img class="nbalogo" src="NBAlogo.jpeg">
+                        <img class="naaclogo" src="NAAClogo.jpeg">
+                        <div class="numb">
+                            <img class="calllogo" src="calllogo.jpeg">
+                            <p class="number">(020) 7720097780 Extn:641</p>
+                        </div>
+
+                    </div>
+                    <button class="btn headbtn1">Awarded as Best College by SPPU </button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="nbar">
+            <a class="navbar" href=""><img class="homelogo" src="homelogo.png"></a>
+            <a class="navbar" href="">ABOUT US</a>
+            <a class="navbar" href="">ACADEMICS</a>
+            <a class="navbar" href="">ADMISSIONS</a>
+            <a class="navbar" href="">FACULTY & RESEARCH</a>
+            <a class="navbar" href="">PLACEMENT CELL</a>
+            <a class="navbar" href="">STUDENT LIFE</a>
+            <a class="navbar" href="">CAMPUS</a>
+            <a class="navbar" href="">ALUMINI</a>
+            <a class="navbar" href="">PHD CENTER</a>
+            <a class="navbar" href="">NAAC</a>
+            <a class="navbar" href="">NBA</a>
+            <a class="navbar" href="">GCC</a>
+            <a class="navbar" href="">IQAC</a>
+            <a class="navbar" href="">E-PLATFORM</a>
+            <a class="navbar" href="">E-FEEDBACK</a>
+            <a class="navbar" href="">NIRF</a>
+            <a class="navbar" href="">CONTACT US</a>
+            <a class="navbar" href="">CAREER</a>
+        </div>
+        <div>
+            <img class="photo" src="PHOTO.jpeg">
+        </div>
+        <div class="navbar2">
+            <div class="clubs_head">
+                <div><img class=" triangle_icon" src="trilogo.png"></div>
+
+                <div class="clubs_main_head">
+                    <p>Clubs</p>
+                </div>
+
+            </div>
+            <div class="in_navbar">
+
+                <a class="whitetext" href="">Home </a>
+                <p class="whitetext">></p>
+                <a class="whitetext" href="">Academics</a>
+                <p class="whitetext">></p>
+                <a class="whitetext" href="">Clubs</a>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="departments">
+        <div class="box">
+            <div class="dep_row">
+                <div class="block">
+                    <img class="dep_logo" src="comp.jpeg">
+                    <h4 class="dep_name">Computer Engineering</h4>
+                </div>
+                <div class="block">
+                    <img class="dep_logo" src="mech.jpeg">
+                    <h4 class="dep_name">Mechanical Engineering</h4>
+                </div>
+                <div class="block">
+                    <img class="dep_logo" src="entc.jpeg">
+                    <h4 class="dep_name">E & TC Engineering</h4>
+                </div>
+            </div>
+            <div class="dep_row">
+                <div class="block">
+                    <img class="dep_logo" src="electrical.jpeg">
+                    <h4 class="dep_name">Electrical Engineering</h4>
+                </div>
+                <div class="block">
+                    <img class="dep_logo" src="it.jpeg">
+                    <h4 class="dep_name">Information Technology</h4>
+                </div>
+                <div class="block">
+                    <img class="dep_logo" src="first year.jpeg">
+                    <h4 class="dep_name">Engineering Sciences</h4>
+                </div>
+            </div>
+            <div class="dep_row">
+                <div class="block">
+                    <img class="dep_logo" src="aids.jpeg">
+                    <h4 class="dep_name">AI & DS</h4>
+                </div>
+                <div class="block">
+                    <img class="dep_logo" src="mba.jpeg">
+                    <h4 class="dep_name">MBA</h4>
+                </div>
+                <div class="block">
+                    <img class="dep_logo" src="sports and culture.jpeg">
+                    <h4 class="dep_name">Sports & Culture</h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="cont2">
+        <div class="cont2_subsection">
+            <div class="block1">
+                <h1 class="foot_clg_name">Marathwada Mitra Mandal's College of Engineering</h1>
+                <p class="content_block1">Survey No. 18,Plot No. 5/3, Near Vandevi Temple, Karvenagar, Pune 411052.</p>
+                <p class="content_block1"><strong>Ph.:</strong>(020) 25479811, 25479812, 7720097780, 7720097781,
+                    7720097782</p>
+                <p class="content_block1"><strong>Nos.:</strong> 202,204,206</p>
+                <p class="content_block1"><strong>Email:</strong><a class="email_block1" href=" ">mmcoe@mmcoe.edu.in,
+                        principal@mmcoe.edu.in</a></p>
+                <div>
+                    <p class="content_block1"><strong>Follow us on </strong></p>
+                </div>
+            </div>
+            <div class="block2">
+                <p class="content_block2 title"><strong>ABOUT MMCOE</strong></p>
+                <p class=" content_block2">About Marathwada Mitramandal</p>
+                <p class="content_block2">About MMCOE</p>
+                <p class=" content_block2">Vision & Mission</p>
+                <p class="content_block2">Affiliations & Recognitions</p>
+
+
+            </div>
+            <div class=" block2">
+                <p class="content_block2 title"><strong>ADMISSIONS</strong></>
+                <p class=" content_block2">Prospectus</p>
+                <p class="content_block2">Fee Structure</p>
+                <p class=" content_block2">Fee Payment Process</p>
+                <p class="content_block2.0">Admission Enquiry Cell</p>
+                <p class=" content_block2">FAQS</p>
+
+
+            </div>
+            <div class="block2">
+                <p class="content_block2 title"><strong>PLACEMENTS</strong></>
+                <p class=" content_block2">Our Recruiters</p>
+                <p class="content_block2">Training</p>
+                <p class=" content_block2">Placemnts</p>
+            </div>
+            <div class="block2">
+                <p class="content_block2 title"><strong>STUDENTS LIFE</strong></p>
+                <p class="content_block2">Extra-Curricular Events</p>
+                <p class=" content_block2">Sports</p>
+            </div>
+        </div>
+
+        <hr>
+        <p class="cont2_para">Mandatory Disclosure &nbsp; | &nbsp; Scan and signed copy of MMCOE FRA proposal for
+            finalization of fees for Academic Year 2023-2024 &nbsp; | &nbsp; Anti Ragging Committee and Squad Committee
+            &nbsp;
+            | &nbsp; Internal Complaints Committee &nbsp; | &nbsp; Grievance Committee &nbsp; | &nbsp; Grievance
+            Redressal
+            &nbsp; | &nbsp; SC/ST Committee &nbsp;
+            <hr>
+        <div class="copyright_block">
+            <p class="copyright_block_content">Copyright © MMCOE 2023. All rights reserved.</p>
+            <p class="copyright_block_content">Best viewed in IE 10+, Firefox 20+, Chrome , Safari5+, Opera12+</p>
+        </div>
+        <p class="copyright_block_content">:::| powered by dimakh consultants |:::</p>
+
+
+    </div>
+    <div class="wrapper">
+        <header>
+          <p class="current-date"></p>
+          <div class="icons">
+            <span id="prev" class="material-symbols-rounded">chevron_left</span>
+            <span id="next" class="material-symbols-rounded">chevron_right</span>
+          </div>
+        </header>
+        <div class="calendar">
+          <ul class="weeks">
+            <li>Sun</li>
+            <li>Mon</li>
+            <li>Tue</li>
+            <li>Wed</li>
+            <li>Thu</li>
+            <li>Fri</li>
+            <li>Sat</li>
+          </ul>
+          <ul class="days"></ul>
+        </div>
+      </div>
+      <!-- A button to open the popup form -->
+      <button class="open-button" onclick="BookNow()">Book Now</button>
+  
+      <!-- The form -->
+      <div class="form-popup" id="myForm">
+        <form action="/" method="post" class="form-container">
+          <h1>Login</h1>
+  
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required />
+  
+          <label for="event"><b>Event</b></label>
+          <input type="text" placeholder="Enter Event-Name" name="event" required/>
+          <label for="Location"><b>Location</b></label>
+  
+          <select name="Location" id="Location">
+            <option value="Seminar Hall">Seminar Hall</option>
+            <option value="IMERT Hall">IMERT Hall</option>
+          </select>
+          <br /><br />
+          <h4>Timing-</h4>
+          <label for="Timing"><b>From:</b></label>
+  
+          <select name="Timing" id="Timing">
+            <option value="10:00am">00:00</option>
+            <option value="10:00am">10:00am</option>
+            <option value="10:00am">11:00am</option>
+            <option value="10:00am">12:00pm</option>
+            <option value="10:00am">1:00pm</option>
+            <option value="10:00am">2:00pm</option>
+            <option value="10:00am">10:00pm</option>
+            <option value="10:00am">4:00pm</option>
+            <option value="10:00am">3:00pm</option>
+          </select>
+          <label for="Timing"><b>To:</b></label>
+  
+          <select name="Timing" id="Timing">
+            <option value="10:00am">00:00</option>
+            <option value="10:00am">10:00am</option>
+            <option value="10:00am">11:00am</option>
+            <option value="10:00am">12:00pm</option>
+            <option value="10:00am">1:00pm</option>
+            <option value="10:00am">2:00pm</option>
+            <option value="10:00am">10:00pm</option>
+            <option value="10:00am">4:00pm</option>
+            <option value="10:00am">3:00pm</option>
+          </select>
+  
+          <button type="submit" class="btn">Submit</button>
+  
+          <button type="reset" class="btn">Reset</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">
+    const daysTag = document.querySelector(".days"),
+currentDate = document.querySelector(".current-date"),
+prevNextIcon = document.querySelectorAll(".icons span");
+// getting new date, current year and month
+let date = new Date(),
+currYear = date.getFullYear(),
+currMonth = date.getMonth();
+// storing full name of all months in array
+const months = ["January", "February", "March", "April", "May", "June", "July",
+              "August", "September", "October", "November", "December"];
+const renderCalendar = () => {
+    let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // getting first day of month
+    lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), // getting last date of month
+    lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(), // getting last day of month
+    lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // getting last date of previous month
+    let liTag = "";
+    for (let i = firstDayofMonth; i > 0; i--) { // creating li of previous month last days
+        liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+    }
+    for (let i = 1; i <= lastDateofMonth; i++) { // creating li of all days of current month
+        // adding active class to li if the current day, month, and year matched
+        let isToday = i === date.getDate() && currMonth === new Date().getMonth() 
+                     && currYear === new Date().getFullYear() ? "active" : "";
+        liTag += `<li class="${isToday}">${i}</li>`;
+    }
+    for (let i = lastDayofMonth; i < 6; i++) { // creating li of next month first days
+        liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
+    }
+    currentDate.innerText = `${months[currMonth]} ${currYear}`; // passing current mon and yr as currentDate text
+    daysTag.innerHTML = liTag;
+}
+renderCalendar();
+prevNextIcon.forEach(icon => { // getting prev and next icons
+    icon.addEventListener("click", () => { // adding click event on both icons
+        // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
+        currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
+        if(currMonth < 0 || currMonth > 11) { // if current month is less than 0 or greater than 11
+            // creating a new date of current year & month and pass it as date value
+            date = new Date(currYear, currMonth, new Date().getDate());
+            currYear = date.getFullYear(); // updating current year with new date year
+            currMonth = date.getMonth(); // updating current month with new date month
+        } else {
+            date = new Date(); // pass the current date as date value
+        }
+        renderCalendar(); // calling renderCalendar function
+    });
+}
+);
+function BookNow() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+  
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

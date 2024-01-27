@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadow/Text Shadow</title>
+    <style>
+        body{
+            color: white;
+            background-color: black;
+        }
+        .container{
+            display: flex;
+            justify-content: space-evenly;
+            margin: 88px 0px 12px 0px;
+        }
+        .box{
+            border: 2px solid red;
+            margin: 5px 10px;
+            padding: 10px;
+            width: 200px;
+            background-color:darkkhaki;
+            text-align: center;
+            text-shadow: 7px 7px 5px black;
+        }
+        .container :hover{
+            box-shadow: 12px 12px 10px -3px white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Box Shadow AND Text Shadow</h1>
+    <div class="container">
+        <div class="box" id="box1">
+            <h3>BOX One</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam harum cupiditate iste temporibus repellat ut deserunt laudantium quam et corporis ex officia tenetur culpa, exercitationem voluptatem asperiores.
+        </div>
+        <div class="box" id="box2">
+            <h3>Box Two</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam harum cupiditate iste temporibus repellat ut deserunt laudantium quam et corporis ex officia tenetur culpa, exercitationem voluptatem asperiores.
+        </div>
+        <div class="box" id="box3">
+            <h3>BOX THREE</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam harum cupiditate iste temporibus repellat ut deserunt laudantium quam et corporis ex officia tenetur culpa, exercitationem voluptatem asperiores.
+        </div>
+        <div class="box" id="box4">
+            <h3>BOX FOUR</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam harum cupiditate iste temporibus repellat ut deserunt laudantium quam et corporis ex officia tenetur culpa, exercitationem voluptatem asperiores.
+        </div>
+    </div>
+</body>
+</html>

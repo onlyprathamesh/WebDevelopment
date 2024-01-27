@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on selectors</title>
+    <style>
+        h1{
+            color: black;
+            background-color:chartreuse;
+        }
+        /* Normal way of selecting the p tags inside div, any p tags containing inside div got hilighted */
+        /* div p{
+            background-color:darkgoldenrod;
+            
+        } */
+
+        /* the p tag whose parent is div only gets selected */
+        /* div > p{
+            background-color: aqua;
+        } */
+
+        /* the p tag whose privious sibling is div only gets highleted */
+        div + p{
+            background-color: brown;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>More on selectors tutorial</h1>
+    <div>
+        <ul>
+            <li><p>This is p tag inside div,ul</p></li>
+        </ul>
+        <p>Paragraph inside div</p>
+        <div>
+            <p>another Paragraph inside inside of div</p>
+        </div>
+        <p>ye bhi plus wala hai</p>
+    </div>
+    <p>the Paragraph outside of the div</p>
+    
+</body>
+</html>

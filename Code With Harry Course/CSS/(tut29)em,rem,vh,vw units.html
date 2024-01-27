@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsiveness Begining</title>
+    <style>
+        html{
+            font-size: 13px;
+        }
+        .container{
+            text-align: center;
+            border: 2px solid red;
+
+            /* View-width and View-Height are used to set the height and width of the page to fit comoletly.  */
+            width: 100vw;
+            height: 100vh;
+            
+            /* font-size: 15px; */
+        }
+        #box1{
+            /* Here font size is 4 times bigger than the parents font size, i.e. 4 times of 15px */
+            /* font-size: 4em; */
+            /* and the paddiing depends on the size of the childs font size, i.e. 2 times of 4em */
+            /* padding: 2em; */
+        }
+        #box2{
+            /* Here font size is totally dependent on the default font size, i.e. font size is 4 times of 13px */
+            /* font-size: 4rem; */
+            /* Like em padding size here dose not depends on childs font size, it totally depends on original font size of th page, i.e. 4 times 13px */
+            /* padding: 4rem; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="box1">Heading number One</h1>
+        <h1 id="box2">Heading number Two</h1>
+        <h1 id="box3">Heading number Three</h1>
+        <h1 id="box4">Heading number Four</h1>
+    </div>
+    
+</body>
+</html>

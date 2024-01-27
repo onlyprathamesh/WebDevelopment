@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: chartreuse;
+            display: flex;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            background-color: aqua;
+            border: 2px solid purple;
+            margin: 2px;
+            padding: 2px;
+            position:relative;
+
+        }
+        #BOX1{
+            animation-name: try1;
+            animation-duration: 2s;
+            animation-iteration-count: 5;
+        }
+        #BOX2{
+            animation-name: try2;
+            animation-duration: 2s;
+            animation-iteration-count: 5;
+            animation-direction: reverse;
+        }
+        #BOX3{
+            animation-name: try3;
+            animation-duration: 2s;
+            animation-iteration-count: 5;
+        }
+        #BOX4{
+            animation-name: try4;
+            animation-duration: 2s;
+            animation-iteration-count: 5;
+            animation-direction: reverse;
+        }
+        @keyframes try1{
+            0%{
+                top: 0px;
+                left: 0px;
+            }
+            25%{
+                top: 100px;
+                left: 0px;
+            }
+            50%{
+                top: 100px;
+                left: 100px;
+            }
+            75%{
+                top: 0px;
+                left: 100px;
+            }
+            100%{
+                top: 0px;
+                left: 0px;
+            }
+        }
+        @keyframes try2{
+            0%{
+                top: 0px;
+                left: 0px;
+            }
+            25%{
+                top: 200px;
+                left: 0px;
+            }
+            50%{
+                top: 200px;
+                left: 200px;
+            }
+            75%{
+                top: 0px;
+                left: 200px;
+            }
+            100%{
+                top: 0px;
+                left: 0px;
+            }
+        }
+        @keyframes try3{
+            0%{
+                top: 0px;
+                left: 0px;
+            }
+            25%{
+                top: 300px;
+                left: 0px;
+            }
+            50%{
+                top: 300px;
+                left: 300px;
+            }
+            75%{
+                top: 0px;
+                left: 300px;
+            }
+            100%{
+                top: 0px;
+                left: 0px;
+            }
+        }
+        @keyframes try4{
+            0%{
+                top: 0px;
+                left: 0px;
+            }
+            25%{
+                top: 500px;
+                left: 0px;
+            }
+            50%{
+                top: 500px;
+                left: 500px;
+            }
+            75%{
+                top: 0px;
+                left: 500px;
+            }
+            100%{
+                top: 0px;
+                left: 0px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="BOX1">BOX1</div>
+        <div class="box" id="BOX2">BOX2</div>
+        <div class="box" id="BOX3">BOX3</div>
+        <div class="box" id="BOX4">BOX4</div>
+    </div>
+    
+</body>
+</html>

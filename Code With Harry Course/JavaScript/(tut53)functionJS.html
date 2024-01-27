@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in Javascript</title>
+</head>
+<body>
+    <div class="container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, blanditiis? Maxime, quam, at exercitationem eaque nam accusantium magni provident sunt porro consequuntur iure molestiae. Quibusdam voluptatibus eum maiores beatae dolor alias possimus officiis odit.
+    </div>
+</body>
+<script>
+    let name1 = "Prathamesh";
+    let name2 = "Rahul";
+    let name3 = "Aditya";
+    let name4 = "Tarun";
+    let name5 = "Himesh";
+    let greetwords = "Good afternoon Mr.";
+
+    // Dumb way to code 
+    // console.log(name1 + " is a good boy!");
+    // console.log(name2 + " is a good boy!");
+    // console.log(name3 + " is a good boy!");
+    // console.log(name4 + " is a good boy!");
+    // console.log(name5 + " is a good boy!");
+
+    // Smart way to code 
+    function greet(name,greetwords)
+    {
+        console.log(greetwords + name);
+        console.log(name + " is a good boy!");
+    }
+
+    greet(name1,greetwords);
+    greet(name2,greetwords);
+    greet(name3,greetwords);
+    greet(name4,greetwords);
+    greet(name5,greetwords);
+
+    // Return value 
+    function sum(a,b,c)
+    {
+        let d = a + b + c;
+        return d;
+    }
+
+    console.log(sum(1,2,3));
+</script>
+</html>

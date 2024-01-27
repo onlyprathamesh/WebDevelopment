@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borders & backgrounds</title>
+    <style>
+        #first{
+            background-color: fuchsia;
+            height: 50px;
+            width: 300px;
+        }
+        #second{
+            background-color:crimson;
+            height: 50px;
+            width: 300px;
+            
+            /* This is one way to set border attributes */
+            /* border: 3px;
+            border-color: green;
+            border-style: solid; */
+            
+            /* Another way to set border attributes */
+            border: 3px solid blue;
+            
+            /* Corners of the border can made round/like oval  */
+            border-radius: 10px;
+        }
+        #third{
+            background-color:cyan;
+            height: 50px;
+            width: 300px;
+            
+            border-top: 3px solid green;
+            border-bottom: 3px solid blue;
+            border-left: 3px solid purple;
+            border-right: 3px solid black;
+            
+            border-top-left-radius: 5px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 50px;
+        }
+        #forth{
+            height: 300px;
+            width: 300px;
+            background-image: url(https://imgs.search.brave.com/T4_FyUjAY7DWBt83KLA0o6QnJRsr_1-wbF4HFz5jius/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly93YWxs/dXAubmV0L3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE2LzAzLzA5/LzUxOTcwLW1vdmll/cy1Jcm9uX01hbi5q/cGc);
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+        
+        </style>
+</head>
+<body>
+    <h3>Height, width, borders and backgrounds</h3>
+    
+    <p>Height,Width and background color is edited.</p>
+    <p id="first">This is my first paragraph.</p>
+    
+    <p>Border style is edited.</p>
+    <p id="second">This is my second paragraph.</p>
+    
+    <p>Border style is edited for all different sides.</p>
+    <p id="third">This is my third paragraph.</p>
+    
+    <p>image to the background.</p>
+    <p id="forth">This is my fourth paragraph.</p>
+</body>
+</html>

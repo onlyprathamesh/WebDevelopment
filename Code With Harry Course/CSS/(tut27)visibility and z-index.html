@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visibility & z-index</title>
+    <style>
+        .box{
+            border: 2px solid black;
+            width: 100px;
+            height: 100px;
+        }
+        #box1{
+            position: relative;
+            top: 35px;
+            background-color: chartreuse;
+        }
+        #box2{
+            /* z-index will work for every position other than default(static). will work for absolute,realtive,fixed,sticky.  */
+            position: relative;
+            top: 5px;
+            /* z-index will used when we want to display the element on the top of other, the element on the down side should have z index less than the one on upper side.   */
+            z-index: -1;
+            background-color:coral;
+        }
+        #box3{
+            background-color:darkslategrey;
+        }
+        #box4{
+            /* visibility: hidden;
+            The element gets hidden from the screen, but the space for the element get reserved. */
+
+            /* display: none;
+            now the element will be hidden from the screen as well the space will be utilized by other elements, i.e. Space will not be reserved */
+
+            background-color:goldenrod;
+        }
+        #box5{
+            background-color:darkolivegreen;
+        }
+    </style>
+</head>
+<body>  
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <div class="box" id="box4"></div>
+    <div class="box" id="box5"></div>
+    
+</body>
+</html>

@@ -1,0 +1,82 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+#navbar{
+    background-color: #c14903;
+    padding: 7px 0px;
+    opacity: 90%;
+}
+#navbar ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#navbar li{
+    list-style-type: none;
+}
+#navbar li a{
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0px 20px;
+    color: white;
+}
+#navbar li :hover{
+    color: black;
+}
+
+#main_page{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    background: center / cover no-repeat url('static/gym.jpg');   
+    background-position-y: -65px;
+    height: 500px;
+    opacity: 90%;
+    font-size: 35px;
+}
+
+#main_page div.btn button {
+    margin: 16px 0px;
+    padding: 6px 15px;
+    font-size: 30px;
+    color: white;
+    border: 0px;
+    background-color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+#main_page div.btn button:hover{
+    background-color: white;
+    color: black;
+}
+
+
+#sponsors_page{
+    background-color: yellow;
+    height: 550px;
+        
+}
+
+#sponsors_page div.cards {
+    display: inline-block;
+    border: 2px solid black;
+    height: 200px;
+    width: 300px;
+    border-radius: 13px;
+    margin: 30px 50px;
+    padding: 12px 10px;
+}
+
+#footer{
+    background-color: maroon;
+    height: 100px;
+
+}

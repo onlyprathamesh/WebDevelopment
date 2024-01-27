@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=">
+    <title>Evets</title>
+    <style>
+        #btn{
+            background-color:aqua;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>This is my heading number 1</h1>
+        <p id="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam mollitia deserunt facere quidem! Totam quidem illo rerum. Quibusdam modi accusantium nemo laboriosam corrupti minima! Aperiam perspiciatis architecto sit porro expedita facilis maiores impedit culpa nemo! Aperiam molestiae rerum eligendi ratione deserunt, cupiditate iusto repellat adipisci provident. Sequi, a aspernatur, deleniti ipsam perspiciatis qui laudantium animi impedit id quae ab cum provident, laboriosam libero iure? Aut, incidunt. Dicta repudiandae voluptates numquam. Quos dolores esse unde dicta ad commodi vel error in est fugiat expedita doloremque sapiente necessitatibus deserunt, nesciunt facere recusandae dignissimos ratione. Recusandae eius tempora ratione iure delectus earum soluta iusto minus perferendis quae facere quidem in qui quibusdam voluptate quisquam iste blanditiis doloribus, fugit cupiditate non maiores? Pariatur animi consectetur dolore nisi dicta assumenda voluptas recusandae dolor optio sit sed inventore explicabo vitae, sequi facere quo tempora rerum dolorem. Corporis expedita tenetur eius sit animi ipsam error id blanditiis maiores voluptas nihil quibusdam, fuga accusantium pariatur magnam deleniti autem ea suscipit explicabo odio! Odit sunt vero, commodi incidunt tempora enim dolorum magni corporis fuga officia ut! A porro expedita voluptas dolorum itaque repudiandae mollitia corporis consectetur cupiditate vel, inventore unde placeat? Praesentium iste inventore consectetur nobis voluptate sunt ab voluptatum quibusdam sapiente veniam magni laborum dolore, nisi ea. Quidem esse saepe ipsam quaerat nulla debitis at eligendi optio atque! Aperiam, excepturi possimus non officia neque modi sequi iusto unde fugit soluta nam id alias itaque quibusdam sit aliquid labore laudantium numquam laborum consequatur, esse consectetur. Tempora fugiat hic quidem.
+        </p>
+        <button id="btn" onclick="togglehide()">Show/Hide</button>
+    </div>
+</body>
+<script>
+    // Brouser Events  :
+    // click 
+    // contextmenu
+    // mouseover/mouseout
+    // mousedown/mouseup
+    // mousemove
+
+    // submit 
+    // focus
+
+    // DOMcontentloded
+    
+    // transistionend
+
+    let para = document.getElementById("para");
+    para.addEventListener('mouseover', function run(){
+        console.log('Mouse Inside');
+    })   
+    para.addEventListener('mouseout', function run2(){
+        console.log('Mouse Outside');
+    }
+    )
+    function togglehide(){
+        let btn = document.getElementById("btn");
+
+        if(para.style.display != "none" )
+        {
+            para.style.display = "none";
+        }
+        else
+        {
+            para.style.display = "block";
+
+        }
+    }
+
+
+</script>
+</html>

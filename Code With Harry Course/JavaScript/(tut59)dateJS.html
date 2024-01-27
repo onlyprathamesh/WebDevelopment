@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dates</title>
+    <style>
+        .container
+        {
+            font-size: 20px;
+            border: 3px solid burlywood;
+            border-radius: 5px;
+            background-color: chartreuse;
+            text-align: center;
+            padding: 34px;
+            margin: 4px;
+        }
+        #time
+        {
+
+            font-weight: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        The current tine is <span id="time"></span>
+    </div>
+</body>
+<script>
+    let dat = new Date();
+    // let dat = new Date(0);
+    // let dat = new Date("2027-3-27");
+    // let dat = new Date(year, month, date, hour, minutes, seconds, milliseconds);
+    // let dat = new Date(2023, 5, 23, 11, 50, 47, 34);
+    console.log(dat);
+
+
+   let date = dat.getFullYear();
+//    dat.setMinutes(8);
+   console.log("The year is "+ date);
+   let month = dat.getMonth();
+   console.log("The month is "+ month);
+   let hours = dat.getHours();
+   console.log("The hours is "+ hours);
+   let minutes = dat.getMinutes();
+   console.log("The minutes is "+ minutes);
+
+
+   setInterval(newdate, 1000);
+   function newdate()
+   {
+       time.innerHTML = new Date;
+    }
+    
+</script>
+</html>

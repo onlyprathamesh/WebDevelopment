@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus veritatis neque explicabo, aperiam deleniti cupiditate? Soluta, non. Vero tempora tempore vel. Nulla sed aperiam porro fugiat. Facilis in velit deleniti. At ullam vitae impedit?</p>
+    </div>
+</body>
+<script>
+    var string = "This is a string you mf";
+    console.log(string);
+
+    // Frist occurance of the string 
+    var fo = string.indexOf("is");
+    console.log(fo);
+    
+    // Frist occurance of the string 
+    var lo = string.lastIndexOf("is");
+    console.log(lo);
+
+    // Substring from a string 
+    var substr = string.slice(2,9);
+    // var substr = string.substring(2,9);
+    // var substr = string.substr(2,9);
+    console.log(substr);
+
+    // To replace string 
+    var replace = string.replace("mf", "MOTHER FUCKER");
+    console.log(string);
+    console.log(replace);
+
+    // Lowercase and Uppercase 
+    var lcase = string.toLowerCase();
+    var ucase = string.toUpperCase();
+    console.log(lcase);
+    console.log(ucase);
+
+    // To get character at specific location 
+    var charat = string.charAt(5);
+    console.log(charat);
+</script>
+</html>

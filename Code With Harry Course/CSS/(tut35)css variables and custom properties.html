@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS variables and custom properties</title>
+    <style>
+        :root{
+            --col: cyan;
+            /* this color can be used anywhere in the code cause this is set in the root of the code.  */
+        }
+        .container{
+            display: flex;
+        }
+        .box{
+            /* this is the variable created by us to define many things later in this code  */
+            /* this variable must be used in same block or box it will not work in another block or box.  */
+            --shadow-color : green;
+            --back-color: salmon;
+            --color: red;
+            margin: 2px 7px;
+            height: 150px;
+            width: 150px;
+            border: 2px solid var(--col);
+            background-color: var(--back-color);
+            box-shadow: 12px 12px var(--shadow-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    
+</body>
+</html>

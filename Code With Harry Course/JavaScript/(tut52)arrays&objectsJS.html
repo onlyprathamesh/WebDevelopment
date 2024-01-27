@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Objects</title>
+</head>
+<body>
+    <div class="demo">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti exercitationem ab obcaecati perspiciatis molestias delectus aliquam sit, quos quod quia. Accusamus dolorum nesciunt illum animi quae dolore alias aliquam hic.</p>
+    </div>
+</body>
+<script>
+    //Normal variables
+    let var1 = "Prathamesh";
+    let var2 = 23;
+    let var3 = true;
+    let var4 = 34.0052;
+    let var5 = null;
+
+    // Making objects 
+    let obj = {
+        name : "Prathamesh",
+        age : 19,
+        gender : "Male",
+        height : "5'10",
+    }
+    console.log(obj);
+    console.log(obj.name);
+    console.log("err "+ obj['age']);
+    console.log(obj.height);
+
+    // Making Arrays 
+    let array = [12,11,13,14, " Prahtamesh", null];
+    console.log(array);
+    console.log(array.length);
+    
+    array = array.sort();
+    array.push("Iron-Man");
+    console.log(array);
+    // console.log(array[4]);
+    // console.log(array[2]);
+</script>
+</html>

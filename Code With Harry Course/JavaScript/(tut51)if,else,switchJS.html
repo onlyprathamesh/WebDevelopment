@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If-Else Conditions and Switch case</title>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li>Item-1</li>
+            <li>Item-2</li>
+            <li>Item-3</li>
+            <li>Item-4</li>
+            <li>Item-5</li>
+            <li>Item-6</li>
+            <li>Item-7</li>
+            <li>Item-8</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var string1 = "Prathamesh";
+    var string1 = "Kamble";
+    console.log(string1);
+
+    // Cannot override variable in let / Let is mostly used !!! do not use var
+    // let string2 = "prathamesh";
+    // let string2 = "kamble";
+    // console.log(string2);
+
+    let a = 35;
+    {
+        //Overriding of variable can be done by putting it in instance, the value will be valid for only that instance only
+        let a = 23;
+        console.log(a);
+    }
+    console.log(a);
+
+    const str = "This is the constant string cannot be changed!";
+    // str = "I want to change it";
+    console.log(str);   
+
+    // If-Else conditions
+    let age = 19;
+    if(age < 18)
+    {
+        console.log("You are chotu right now, cant drink!");
+    }
+    else if(age > 18)
+    {
+        console.log("You are fully grown you can drink, fuck, kill, do whatever you want!");
+    }
+    else if(age == 18)
+    {
+        console.log("You are are at critical age you can not do anything unless you grow from 18");
+    }
+    else
+    {
+        console.log("Please specify your age.");
+    }
+
+    let position = 2;
+    switch (position) {
+        case 1:
+        console.log("Lets do it in position 1");
+            break;
+        case 2:
+        console.log("Lets do it in position 2");
+            break;
+        case 4:
+        console.log("Lets do it in position 4");
+            break;
+        case 4:
+        console.log("Lets do it in position 4");
+            break;
+        case 5:
+        console.log("Lets do it in position 5");
+            break;
+        default:
+        console.log("Please specify positon.");
+            break;
+    }
+
+</script>
+</html>

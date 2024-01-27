@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions is CSS</title>
+    <style>
+        .container{
+            border: 2px solid black;
+            background-color: khaki;
+            height: 5000px;
+            width: 5000px;
+        }
+        .box{
+            border: 2px solid black;
+            display: inline-block;
+            height: 200px;
+            width: 200px;
+            margin: 4px;
+        }
+        /* position : absolute,relative, static(default),fixed,sticky */
+        #box3{
+            /* position: absolute;
+            position changes according to the parent i.e. in this case container */
+            
+            /* position: relative;
+            position changes according to its original previous position */
+            /* top: 30px;
+            left: 30px; */
+
+            /* position: fixed;
+            position will be fixed to the point we set and move as we scroll through 
+            right: 5px;*/
+
+            /* position: sticky;
+            position of the box will be sticked to the screen at the set point 
+            top: 50px;*/
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>    
+    </div>
+</body>
+</html>
